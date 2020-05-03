@@ -17,7 +17,7 @@ exports.index = function(req,res){
 exports.new = function(req,res){
     var contact = new Contact();
     contact.courseName = req.body.courseName;
-    contact. assignmentName= req.body.assignmentName;
+    contact.assignmentName = req.body.assignmentName;
 
     contact.save(function(err){
         if(err){
@@ -43,7 +43,7 @@ exports.view = function(req, res){
 }
 
 //update
-exports.update = function(req, res){
+exports.update = function(req,res){
     Contact.findById(req.params.contact_id, function(err, contact){
         if(err){
             res.send(err);
@@ -59,7 +59,7 @@ exports.update = function(req, res){
                 res.json(err);
             }
             res.json({
-                message: "upsdated",
+                message: "updated",
                 data: contact
             })
         })
