@@ -1,11 +1,11 @@
 let router = require("express").Router();
 let controller = require ('./asgn-controller')
 
-router.route("/contacts")
+router.route("/assignment")
     .get(controller.index)
     .post(controller.new)
 
-router.route('/contacts/:contact_id')
+router.route('/assignment/:contact_id')
     .get(controller.view)
     .patch(controller.update)
     .put(controller.update)
