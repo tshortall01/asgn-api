@@ -2,14 +2,14 @@
 var Contact = require('./asgn-model');
 
 exports.index = function(req,res){
-    Contact.get(function(err,contacts){
+    Contact.get(function(err,contact){
         if (err){
             res.json(err);
         }
         res.json({
             status:"success",
             message: "Data Retrived",
-            data: contacts
+            data: contact
         })
     })
 }
